@@ -3,13 +3,14 @@ import { onAddTask } from './scripts/addTask.js';
 import { getTasks } from './scripts/tasksGateway.js';
 import { changeDone } from './scripts/changeDone.js';
 import { deleteTask } from './scripts/deleteTask.js';
+import './index.scss';
 
 const list = document.querySelector('.list');
 const createTaskBtn = document.querySelector('.create-task-btn');
 
-getTasks().then(response => renderTasks(response));
+getTasks().then((response) => renderTasks(response));
 
-const onListHandler = e => {
+const onListHandler = (e) => {
   if (e.target.classList.contains('list-item__checkbox')) {
     const task = {
       id: e.target.closest('.list-item').dataset.id,
