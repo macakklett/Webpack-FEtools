@@ -1,7 +1,7 @@
-import { updateTask, getTasks } from './tasksGateway.js';
-import { renderTasks } from './renderTasks.js';
+import { updateTask, getTasks } from './tasksGateway';
+import renderTasks from './renderTasks';
 
-export const changeDone = task => {
+export default (task) => {
   const { id, done, finishDate } = task;
 
   const newTask = {

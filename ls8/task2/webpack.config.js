@@ -1,4 +1,4 @@
-// const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -14,10 +14,10 @@ module.exports = (env, argv) => {
       filename: 'bundle.js',
     },
 
-    // optimization: {
-    //   minimize: true,
-    //   minimizer: [new TerserPlugin()],
-    // },
+    optimization: {
+      minimize: true,
+      minimizer: [new TerserPlugin()],
+    },
 
     module: {
       rules: [

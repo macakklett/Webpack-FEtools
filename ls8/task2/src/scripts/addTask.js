@@ -1,9 +1,9 @@
-import { addTaskToBD, getTasks } from './tasksGateway.js';
-import { renderTasks } from './renderTasks.js';
+import { addTaskToBD, getTasks } from './tasksGateway';
+import renderTasks from './renderTasks';
 
 const input = document.querySelector('.task-input');
 
-const addTask = text => {
+const addTask = (text) => {
   const newTask = {
     text,
     done: false,
@@ -12,7 +12,7 @@ const addTask = text => {
   addTaskToBD(newTask).then(getTasks).then(renderTasks);
 };
 
-export const onAddTask = () => {
+export default () => {
   const newTaskText = input.value.trim();
   if (!newTaskText) return;
 

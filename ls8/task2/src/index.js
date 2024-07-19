@@ -1,8 +1,8 @@
-import { renderTasks } from './scripts/renderTasks.js';
-import { onAddTask } from './scripts/addTask.js';
-import { getTasks } from './scripts/tasksGateway.js';
-import { changeDone } from './scripts/changeDone.js';
-import { deleteTask } from './scripts/deleteTask.js';
+import renderTasks from './scripts/renderTasks';
+import onAddTask from './scripts/addTask';
+import { getTasks } from './scripts/tasksGateway';
+import changeDone from './scripts/changeDone';
+import deleteTask from './scripts/deleteTask';
 import './index.scss';
 
 const list = document.querySelector('.list');
@@ -22,11 +22,9 @@ const onListHandler = (e) => {
   }
 
   if (e.target.classList.contains('list-item__close')) {
-    const id = e.target.closest('.list-item').dataset.id;
+    const { id } = e.target.closest('.list-item').dataset;
     deleteTask(id);
   }
-
-  return;
 };
 
 list.addEventListener('click', onListHandler);

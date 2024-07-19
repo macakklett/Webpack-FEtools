@@ -1,6 +1,6 @@
-import { deleteTaskFromBD, getTasks } from './tasksGateway.js';
-import { renderTasks } from './renderTasks.js';
+import { deleteTaskFromBD, getTasks } from './tasksGateway';
+import renderTasks from './renderTasks';
 
-export const deleteTask = id => {
+export default (id) => {
   deleteTaskFromBD(id).then(getTasks).then(renderTasks);
 };

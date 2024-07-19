@@ -1,6 +1,6 @@
 const list = document.querySelector('.list');
 
-export const renderTasks = tasksList => {
+export default (tasksList) => {
   if (!tasksList) return;
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
